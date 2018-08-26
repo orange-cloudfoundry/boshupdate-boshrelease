@@ -1,0 +1,5 @@
+check process githubrelease_exporter
+  with pidfile /var/vcap/sys/run/githubrelease_exporter/githubrelease_exporter.pid
+  start program "/var/vcap/jobs/githubrelease_exporter/bin/githubrelease_exporter_ctl start"
+  stop program "/var/vcap/jobs/githubrelease_exporter/bin/githubrelease_exporter_ctl stop"
+  group vcap

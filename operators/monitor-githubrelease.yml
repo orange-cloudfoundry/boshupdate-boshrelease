@@ -1,0 +1,38 @@
+# Apply ./bosh/add-credhub-exporter-uaa-clients.yml to your bosh-deployment
+
+# Exporter jobs
+- type: replace
+  path: /instance_groups/name=prometheus2/jobs/-
+  value:
+    name: githubrelease_exporter
+    release: githubrelease
+    properties:
+      githubrelease_exporter:
+        metrics:
+          environment: "((metrics_environment))"
+        github-token: "((github_token))"
+
+- type: replace
+  path: /instance_groups/name=prometheus2/jobs/name=prometheus2/properties/prometheus/scrape_configs/-
+  value:
+    job_name: githubrelease
+    scrape_interval: 30m
+    scrape_timeout: 4m
+    static_configs:
+    - targets:
+      - localhost:9362
+
+- type: replace
+  path: /releases/-
+  value:
+    name: githubrelease
+    url: file:///home/psyco/dev/paca/bosh-releases/githubrelease-boshrelease/githubrelease-boshrelease-0.1.5.tgz
+    version: 0.1.5
+
+# # Prometheus Alerts
+# - type: replace
+#   path: /instance_groups/name=prometheus2/jobs/name=credhub_alerts?/release
+#   value: prometheus
+# - type: replace
+#   path: /instance_groups/name=prometheus2/jobs/name=prometheus2/properties/prometheus/rule_files/-
+#   value: /var/vcap/jobs/credhub_alerts/*.alerts.yml
