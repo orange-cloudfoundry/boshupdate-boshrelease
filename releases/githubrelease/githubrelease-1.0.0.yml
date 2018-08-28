@@ -1,0 +1,19 @@
+name: githubrelease
+version: 1.0.0
+commit_hash: 78b84f8
+uncommitted_changes: false
+jobs:
+- name: githubrelease_exporter
+  version: ebd7dda16e8df48bb82bf0f8fa6547bbb05bb709
+  fingerprint: ebd7dda16e8df48bb82bf0f8fa6547bbb05bb709
+  sha1: 4ebe4cc2dc8433bd239a946ce374c98202c26ff2
+packages:
+- name: githubrelease_exporter
+  version: e0677ee0a7b378a6f25d922fc745a7b95fbeb260
+  fingerprint: e0677ee0a7b378a6f25d922fc745a7b95fbeb260
+  sha1: 5e7c860dd88c4ad46880607024245c89fd3570da
+  dependencies: []
+license:
+  version: 33258d6bbb9fdac1e8303f12d092e82da951b12b
+  fingerprint: 33258d6bbb9fdac1e8303f12d092e82da951b12b
+  sha1: 81b1bc692ec16de23229ebe25e538ed173dd741f
