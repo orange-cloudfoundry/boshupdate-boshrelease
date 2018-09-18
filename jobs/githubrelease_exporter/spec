@@ -40,6 +40,27 @@ properties:
     description: "List of comma-separated hosts that should skip connecting to the proxy"
   githubrelease_exporter.github-token:
     description: "Token to use to connect Github API (without which the exporter will quickly hit rate limiter)"
+  githubrelease_exporter.bosh.log_level:
+    description: "BOSH log level"
+    default: "error"
+  githubrelease_exporter.bosh.url:
+    description: "BOSH director url"
+    default: "https://10.0.0.6:25555"
+  githubrelease_exporter.bosh.username:
+    description: "BOSH director username"
+    default: ""
+  githubrelease_exporter.bosh.password:
+    description: "BOSH director password"
+    default: ""
+  githubrelease_exporter.bosh.client_id:
+    description: "BOSH director client id (UAA authentication)"
+    default: ""
+  githubrelease_exporter.bosh.secret_id:
+    description: "BOSH director client secret (UAA authentication)"
+    default: ""
+  githubrelease_exporter.bosh.proxy:
+    description: "BOSH director proxy"
+    default: ""
   githubrelease_exporter.bosh-deployment:
     description: ""
     default:
