@@ -23,7 +23,7 @@
   value:
     name: boshupdate
     url: https://github.com/orange-cloudfoundry/boshupdate-boshrelease/releases/download/v2.0.0/boshupdate-boshrelease-2.0.0.tgz
-    sha1: "//todo"
+    sha1: "c24262ec7619215aba04d1b725aa75b07a030422"
     version: 2.0.0
 
 # Prometheus Scrape Config
