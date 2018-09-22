@@ -1,6 +1,0 @@
----
-name: githubrelease_exporter
-
-files:
-  - common/utils.sh
-  - githubrelease_exporter/githubrelease_exporter-0.2.0.linux-amd64.tar.gz

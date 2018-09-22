@@ -1,4 +1,3 @@
-githubrelease_exporter/githubrelease_exporter-0.2.0.linux-amd64.tar.gz:
-  size: 10738265
-  object_id: 11527834-96ab-443a-4c49-dae27be3809c
-  sha: a964acdf8bae4dc3080032f7d037ea1c58038f22
+boshupdate_exporter/boshupdate_exporter-0.2.0.linux-amd64.tar.gz:
+  size: 5526012
+  sha: c75fbe6c2acd5b148461c45b3beb2f999186230e

@@ -1,0 +1,16 @@
+bosh:
+  log_level: <%= p("boshupdate_exporter.bosh.log_level") %>
+  url: <%= p("boshupdate_exporter.bosh.url") %>
+  username: <%= p("boshupdate_exporter.bosh.username", "") %>
+  password: <%= p("boshupdate_exporter.bosh.password", "") %>
+  client_id: <%= p("boshupdate_exporter.bosh.client_id", "") %>
+  client_secret: <%= p("boshupdate_exporter.bosh.client_secret", "") %>
+  ca_cert: /var/vcap/jobs/boshupdate_exporter/config/bosh_ca_cert.pem
+  proxy: <%= p("boshupdate_exporter.bosh.proxy", "") %>
+  excludes: <%= p("boshupdate_exporter.bosh.excludes").to_json %>
+
+github:
+  token: <%= p("boshupdate_exporter.github.token") %>
+  update_interval: <%= p("boshupdate_exporter.github.update_interval") %>
+  manifest_releases: <%= p("boshupdate_exporter.github.manifest_releases").to_json %>
+  generic_releases: <%= p("boshupdate_exporter.github.generic_releases").to_json %>

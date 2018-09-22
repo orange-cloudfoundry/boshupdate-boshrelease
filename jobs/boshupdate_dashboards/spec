@@ -1,0 +1,9 @@
+---
+name: boshupdate_dashboards
+
+packages: []
+
+templates:
+  boshupdate.json: boshupdate.json
+
+properties: {}

@@ -1,0 +1,3 @@
+- type: replace
+  path: /manifest_version?
+  value: v((version))

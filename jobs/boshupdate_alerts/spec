@@ -1,0 +1,13 @@
+---
+name: boshupdate_alerts
+
+packages: []
+
+templates:
+  boshupdate.alerts.yml: boshupdate.alerts.yml
+
+properties:
+  boshupdate_alerts.outofdate.maxage:
+    description: "Maximum number of days since current deployment version is deprecated"
+    default: 40
+

@@ -1,4 +1,4 @@
-name: githubrelease
+name: boshupdate
 blobstore:
   provider: s3
   options:
