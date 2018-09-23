@@ -2,7 +2,7 @@ groups:
   - name: boshupdate
     rules:
       - alert: BoshUpdateDeploymentDeprecated
-        expr: round((time() - (boshupdate_deployment_status != 0)) / 86400)
+        expr: round((time() - (boshupdate_deployment_status != 0)) / 86400) > <%= p('boshupdate_alerts.deploymentdeprecated.threshold') %>
         for: 5m
         labels:
           severity: warning

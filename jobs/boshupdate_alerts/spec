@@ -7,7 +7,7 @@ templates:
   boshupdate.alerts.yml: boshupdate.alerts.yml
 
 properties:
-  boshupdate_alerts.outofdate.maxage:
-    description: "Maximum number of days since current deployment version is deprecated"
+  boshupdate_alerts.deploymentdeprecated.threshold:
+    description: "Maximum number of days since deployment is deprecated"
     default: 40
 
