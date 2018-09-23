@@ -1,0 +1,27 @@
+name: boshupdate
+version: 2.0.1
+commit_hash: 8b5365e
+uncommitted_changes: false
+jobs:
+- name: boshupdate_alerts
+  version: 22aa7a5a2fef85318f84d8dcf1e4afb332437192
+  fingerprint: 22aa7a5a2fef85318f84d8dcf1e4afb332437192
+  sha1: 9d530fa206c7564b1777322ab0147bf1b48b89ed
+- name: boshupdate_dashboards
+  version: ecf00c0a474260bb90e1ce44958f7a1980d2c142
+  fingerprint: ecf00c0a474260bb90e1ce44958f7a1980d2c142
+  sha1: 524c70835f677dcb7b18c4c518fbd748920f6f01
+- name: boshupdate_exporter
+  version: c3b03681e85fe11d4bd3ea6928a5388d237dc965
+  fingerprint: c3b03681e85fe11d4bd3ea6928a5388d237dc965
+  sha1: 5c1c6e9e744a2f2782f383f09fbbce570df32da7
+packages:
+- name: boshupdate_exporter
+  version: 2e919f5388273fc3247d2604b56a4fa7ba99e218
+  fingerprint: 2e919f5388273fc3247d2604b56a4fa7ba99e218
+  sha1: ffd5f3de81bf20ebd443907d78dbeb6ac549bd0b
+  dependencies: []
+license:
+  version: 33258d6bbb9fdac1e8303f12d092e82da951b12b
+  fingerprint: 33258d6bbb9fdac1e8303f12d092e82da951b12b
+  sha1: 570c02af8e006fa4bb43e70703aae21e4baf04db
