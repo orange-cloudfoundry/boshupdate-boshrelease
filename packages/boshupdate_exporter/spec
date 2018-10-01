@@ -3,4 +3,4 @@ name: boshupdate_exporter
 
 files:
   - common/utils.sh
-  - boshupdate_exporter/boshupdate_exporter-0.2.0.linux-amd64.tar.gz
+  - boshupdate_exporter/boshupdate_exporter-0.3.0.linux-amd64.tar.gz
