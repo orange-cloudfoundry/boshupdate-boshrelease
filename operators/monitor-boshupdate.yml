@@ -22,9 +22,9 @@
   path: /releases/-
   value:
     name: boshupdate
-    url: https://github.com/orange-cloudfoundry/boshupdate-boshrelease/releases/download/v2.0.0/boshupdate-boshrelease-2.0.0.tgz
-    sha1: "d7fa4773a7c44a21256c4b80cba4aea594e11993"
-    version: 2.0.1
+    url: https://github.com/orange-cloudfoundry/boshupdate-boshrelease/releases/download/v2.1.0/boshupdate-boshrelease-2.1.0.tgz
+    sha1: "ac4ac9fbaf7f9feb0bd3b36d3e0be40b4fac616e"
+    version: 2.1.0
 
 # Prometheus Scrape Config
 - type: replace
