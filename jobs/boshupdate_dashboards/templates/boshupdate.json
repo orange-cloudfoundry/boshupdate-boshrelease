@@ -16,7 +16,7 @@
   "editable": false,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1538385700575,
+  "iteration": 1538392260274,
   "links": [],
   "panels": [
     {
@@ -910,7 +910,7 @@
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
           "mappingType": 1,
-          "pattern": "manifest_lastest",
+          "pattern": "manifest_latest",
           "thresholds": [],
           "type": "hidden",
           "unit": "short"
@@ -1703,5 +1703,5 @@
   "timezone": "",
   "title": "BOSH: Updates",
   "uid": "u51X3Q0mz",
-  "version": 30
+  "version": 4
 }
