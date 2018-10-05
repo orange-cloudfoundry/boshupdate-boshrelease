@@ -8,7 +8,7 @@ groups:
           severity: warning
         annotations:
           summary: "Deprecated deployment `{{$labels.environment}}/{{$labels.deployment}}`"
-          description: "Deployment `{{$labels.environment}}/{{$labels.deployment}}` with version `{{$labels.current}}` is out-of-date since `{{value}}` days. Last available version is `{{$labels.latest}}`"
+          description: "Deployment `{{$labels.environment}}/{{$labels.deployment}}` with version `{{$labels.current}}` is out-of-date since `{{$value}}` days. Last available version is `{{$labels.latest}}`"
 
       - alert: BoshUpdateLastScrapTooOld
         expr: (time() - boshupdate_last_scrape_timestamp) > 1800
