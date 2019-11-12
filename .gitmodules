@@ -1,0 +1,3 @@
+[submodule "src/boshupdate_exporter"]
+	path = src/boshupdate_exporter
+	url = ../boshupdate_exporter.git

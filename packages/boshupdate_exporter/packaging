@@ -1,12 +1,37 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-set -eux
+set -e
+set -u
+
+# Available variables (https://github.com/cloudfoundry/bosh-cli/blob/master/installation/pkg/compiler.go)
+# BOSH_COMPILE_TARGET: path to ../../src/ directory and also the current working directory when this script is invoked
+# BOSH_INSTALL_TARGET: where to install the package: /var/vcap/data/packages/$package_name/$package_version
+# BOSH_PACKAGE_NAME:
+# BOSH_PACKAGES_DIR:
+
+# compatibility?
+: "${BOSH_PACKAGES_DIR:=$(realpath -e /var/vcap/packages)}"
+
+go_pkg="golang-1.12-$(uname | tr '[:upper:]' '[:lower:]')"
+# get golang environment variables
+. "${BOSH_PACKAGES_DIR}/${go_pkg}/bosh/compile.env"
+
+# get Go package name (ie: github.com/group/project-name)
+go_pkgname=$(sed -n '/rootPath/{s/.*:[^"]*"//;s/".*//p}' "${BOSH_COMPILE_TARGET}/${BOSH_PACKAGE_NAME}/vendor/vendor.json")
+
+mkdir -pv \
+	"${GOPATH}/src/${go_pkgname%/*}" \
+	"${BOSH_INSTALL_TARGET}/bin"
+
+# FIXME: use go mod
+cp -a "$BOSH_PACKAGE_NAME" "${GOPATH}/src/${go_pkgname}"
 
 # Copy common utils
-mkdir -p ${BOSH_INSTALL_TARGET}/common
-cp -a ${BOSH_COMPILE_TARGET}/common/* ${BOSH_INSTALL_TARGET}/common
+cp -a "${BOSH_COMPILE_TARGET}/common/" "${BOSH_INSTALL_TARGET}/"
 
-# Extract boshupdate_exporter package
-mkdir -p ${BOSH_INSTALL_TARGET}/bin
-tar xzvf ${BOSH_COMPILE_TARGET}/boshupdate_exporter/boshupdate_exporter-0.3.0.linux-amd64.tar.gz
-cp -a ${BOSH_COMPILE_TARGET}/boshupdate_exporter-0.3.0.linux-amd64/* ${BOSH_INSTALL_TARGET}/bin
+# compile, install
+(
+	cd "${GOPATH}/src/${go_pkgname}/exporter"
+	go build -a -ldflags "-s -w" -gcflags="all=-trimpath=$GOPATH" \
+		-o "${BOSH_INSTALL_TARGET}/bin/boshupdate_exporter"
+)
