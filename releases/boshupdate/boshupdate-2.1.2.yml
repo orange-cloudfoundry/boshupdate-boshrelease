@@ -1,0 +1,37 @@
+name: boshupdate
+version: 2.1.2
+commit_hash: 9b6fd51
+uncommitted_changes: false
+jobs:
+- name: boshupdate_alerts
+  version: 7afbb550571679c9d3934f040c988fb1829c749caff5ab20b905dfe63107df23
+  fingerprint: 7afbb550571679c9d3934f040c988fb1829c749caff5ab20b905dfe63107df23
+  sha1: sha256:2c9ea59003210a8523eb6dcc9bc222251dc7a38d7aae25aae36731d047d16a76
+  packages: []
+- name: boshupdate_dashboards
+  version: 62d0204abf58ebd8955f73d0e850352b1370bf81e128585de2e5e6ebde972f5c
+  fingerprint: 62d0204abf58ebd8955f73d0e850352b1370bf81e128585de2e5e6ebde972f5c
+  sha1: sha256:ee778a7a0b9bcfbf6f49a0e334d9af15007d60bd3050e890da23cd3f9c0be7d8
+  packages: []
+- name: boshupdate_exporter
+  version: 62f6f221cde70be2047118651a24151ec801d06a46201572cf37764f77bb4ce5
+  fingerprint: 62f6f221cde70be2047118651a24151ec801d06a46201572cf37764f77bb4ce5
+  sha1: sha256:a4bdd31df3c6b97a96dd447361f820e40aa7ef14d8f48e920b09585cd8c8605b
+  packages:
+  - boshupdate_exporter
+packages:
+- name: boshupdate_exporter
+  version: fbfe5ffb00bb171dd728a36e313bc73b7aafab3c8a58b5067e9454b4aabfc797
+  fingerprint: fbfe5ffb00bb171dd728a36e313bc73b7aafab3c8a58b5067e9454b4aabfc797
+  sha1: sha256:81672480a0c6d22919dd0316fa3e05601cb03dbbf6cc3fab8fee5553b1a56ec4
+  dependencies:
+  - golang-1.12-linux
+- name: golang-1.12-linux
+  version: 7e1ec881a5d8138d717b85da931e45a5632c482a5e7a9b55d4976b05002eaa5a
+  fingerprint: 7e1ec881a5d8138d717b85da931e45a5632c482a5e7a9b55d4976b05002eaa5a
+  sha1: sha256:18c94b25299e73df18afb2d9d7594cc863994781b82b724ecbd3a2579c93e711
+  dependencies: []
+license:
+  version: 3da01c964e416daaeb151c8e439f76529b4be2fd02a8a7514056313cfdb2ee1a
+  fingerprint: 3da01c964e416daaeb151c8e439f76529b4be2fd02a8a7514056313cfdb2ee1a
+  sha1: sha256:07ccd5cd23ed287a263c955b835ccf3b6e864a2e7c5f0069ba1ad0deb283dbee
