@@ -5,7 +5,6 @@ dependencies:
   - golang-1.12-linux
 
 files:
-  - common/utils.sh
   - boshupdate_exporter/**
 
 ...
