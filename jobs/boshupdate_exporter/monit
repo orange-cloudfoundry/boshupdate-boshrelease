@@ -1,5 +1,5 @@
 check process boshupdate_exporter
-  with pidfile /var/vcap/sys/run/boshupdate_exporter/boshupdate_exporter.pid
-  start program "/var/vcap/jobs/boshupdate_exporter/bin/boshupdate_exporter_ctl start"
-  stop program "/var/vcap/jobs/boshupdate_exporter/bin/boshupdate_exporter_ctl stop"
+  with pidfile   /var/vcap/sys/run/bpm/boshupdate_exporter/boshupdate_exporter.pid
+  start program "/var/vcap/jobs/bpm/bin/bpm start boshupdate_exporter"
+  stop program  "/var/vcap/jobs/bpm/bin/bpm stop  boshupdate_exporter"
   group vcap

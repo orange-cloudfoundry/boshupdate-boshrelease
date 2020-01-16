@@ -1,0 +1,53 @@
+<%
+envs = {
+  HTTP_PROXY  => p("env.http_proxy", "")
+  http_proxy  => p("env.http_proxy", "")
+  HTTPS_PROXY => p("env.https_proxy", "")
+  https_proxy => p("env.https_proxy", "")
+  NO_PROXY    => p("env.no_proxy", "")
+  no_proxy    => p("env.no_proxy", "")
+}
+%>
+
+processes:
+- name: boshupdate_exporter
+  executable: /var/vcap/packages/boshupdate_exporter/bin/boshupdate_exporter
+  args:
+    - "--config"
+    - "/var/vcap/jobs/boshupdate_exporter/config/config.yml"
+    <% if_p('boshupdate_exporter.log_format') do |log_format| %>
+    - "--log.format"
+    - "<%= log_format %>"
+    <% end %>
+    <% if_p('boshupdate_exporter.log_level') do |log_level| %>
+    - "--log.level"
+    - "<%= log_level %>"
+    <% end %>
+    - "--metrics.environment"
+    - "<%= p('boshupdate_exporter.metrics.environment') %>"
+    <% if_p('boshupdate_exporter.metrics.namespace') do |namespace| %>
+    - "--metrics.namespace"
+    - "<%= namespace %>"
+    <% end %>
+    - "--web.listen-address"
+    - ":<%= p('boshupdate_exporter.web.port') %>"
+    <% if_p('boshupdate_exporter.web.telemetry_path') do |telemetry_path| %>
+    - "--web.telemetry-path"
+    - "<%= telemetry_path %>"
+    <% end %>
+    <% if_p('boshupdate_exporter.web.auth_username') do |auth_username| %>
+    - "--web.auth.username"
+    - "<%= auth_username %>"
+    <% end %>
+    <% if_p('boshupdate_exporter.web.auth_password') do |auth_password| %>
+    - "--web.auth.password"
+    - "<%= auth_password %>"
+    <% end %>
+    <% if_p('boshupdate_exporter.web.tls_cert', 'boshupdate_exporter.web.tls_key') do %>
+    - "--web.tls.cert_file"
+    - "/var/vcap/jobs/boshupdate_exporter/config/web_tls_cert.pem"
+    - "--web.tls.key_file"
+    - "/var/vcap/jobs/boshupdate_exporter/config/web_tls_key.pem"
+    <% end %>
+  env: <%= envs.to_json %>
+  capabilities: []
