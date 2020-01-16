@@ -93,16 +93,6 @@ properties:
           - manifests/operators/enable-cf-route-registrar.yml
           - manifests/operators/use-sqlite3.yml
         matchers: [ "prometheus(-.*)?" ]
-      bosh:
-        owner: cloudfoundry
-        repo: bosh-deployment
-        manifest: bosh.yml
-        ops:
-          - vsphere/cpi.yml
-          - uaa.yml
-          - credhub.yml
-          - bbr.yml
-        matchers: [ "bosh(-.*)?" ]
   boshupdate_exporter.github.generic_releases:
     description: "Generic github releases configuration"
     default:
@@ -119,5 +109,5 @@ properties:
         owner: cloudfoundry
         repo: bosh-linux-stemcell-builder
         format:
-          match: "stable-([0-9+.]+)"
+          match: "ubuntu-xenial/v([0-9+.]+)"
           replace: "${1}"
