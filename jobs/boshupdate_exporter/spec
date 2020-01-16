@@ -2,7 +2,7 @@
 name: boshupdate_exporter
 
 templates:
-  config/bpm: config/bpm.yml
+  config/bpm.yml: config/bpm.yml
   config/config.yml: config/config.yml
   config/web_tls_cert.pem: config/web_tls_cert.pem
   config/web_tls_key.pem: config/web_tls_key.pem
