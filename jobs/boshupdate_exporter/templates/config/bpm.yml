@@ -1,11 +1,11 @@
 <%
 envs = {
-  HTTP_PROXY  => p("env.http_proxy", "")
-  http_proxy  => p("env.http_proxy", "")
-  HTTPS_PROXY => p("env.https_proxy", "")
-  https_proxy => p("env.https_proxy", "")
-  NO_PROXY    => p("env.no_proxy", "")
-  no_proxy    => p("env.no_proxy", "")
+  "HTTP_PROXY"  => p("env.http_proxy", ""),
+  "http_proxy"  => p("env.http_proxy", ""),
+  "HTTPS_PROXY" => p("env.https_proxy", ""),
+  "https_proxy" => p("env.https_proxy", ""),
+  "NO_PROXY"    => p("env.no_proxy", ""),
+  "no_proxy"    => p("env.no_proxy", "")
 }
 %>
 
