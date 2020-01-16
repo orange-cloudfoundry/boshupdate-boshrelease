@@ -177,7 +177,7 @@
       ],
       "targets": [
         {
-          "expr": "(time() - label_replace(\n  label_replace(\n    min_over_time(boshupdate_deployment_status{environment=~\"$environment\"}[2h]) > 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\"))\n  / 86400",
+          "expr": "(time() - label_replace(\n  label_replace(\n    boshupdate_deployment_status{environment=~\"$environment\"} > 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\"))\n  / 86400",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -332,7 +332,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  label_replace(\n    min_over_time(boshupdate_deployment_status{environment=~\"$environment\", latest=\"not-found\"}[30m]) == 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\")\n  * 1000",
+          "expr": "label_replace(\n  label_replace(\n    boshupdate_deployment_status{environment=~\"$environment\", latest=\"not-found\"} == 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\")\n  * 1000",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -492,7 +492,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  label_replace(\n    min_over_time(boshupdate_deployment_status{environment=~\"$environment\", latest!=\"not-found\"}[2h]) == 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\")\n  * 1000",
+          "expr": "label_replace(\n  label_replace(\n    boshupdate_deployment_status{environment=~\"$environment\", latest!=\"not-found\"} == 0,\n    \"_01_manifest\", \"$1\", \"name\", \"(.*)\"),\n  \"_02_deployment\", \"$1\", \"deployment\", \"(.*)\")\n  * 1000",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -712,7 +712,7 @@
       ],
       "targets": [
         {
-          "expr": "(time() - \nlabel_replace(\n  label_replace(\n    label_replace(\n      min_over_time(boshupdate_deployment_bosh_release_status{environment=~\"$environment\"}[2h]) > 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\"))\n  / 86400",
+          "expr": "(time() - \nlabel_replace(\n  label_replace(\n    label_replace(\n      boshupdate_deployment_bosh_release_status{environment=~\"$environment\"} > 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\"))\n  / 86400",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -918,7 +918,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  label_replace(\n    label_replace(\n      min_over_time(boshupdate_deployment_bosh_release_status{environment=~\"$environment\", boshrelease_latest=\"not-found\"}[2h]) == 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\")\n* 1000",
+          "expr": "label_replace(\n  label_replace(\n    label_replace(\n      boshupdate_deployment_bosh_release_status{environment=~\"$environment\", boshrelease_latest=\"not-found\"} == 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\")\n* 1000",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -1124,7 +1124,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  label_replace(\n    label_replace(\n      min_over_time(boshupdate_deployment_bosh_release_status{environment=~\"$environment\", boshrelease_latest!=\"not-found\"}[2h]) == 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\")\n  * 1000",
+          "expr": "label_replace(\n  label_replace(\n    label_replace(\n      boshupdate_deployment_bosh_release_status{environment=~\"$environment\", boshrelease_latest!=\"not-found\"} == 0,\n      \"_02_manifest\",   \"$1\", \"manifest_name\", \"(.*)\"),\n    \"_03_boshrelease\",\"$1\", \"boshrelease_name\", \"(.*)\"),\n  \"_01_deployment\", \"$1\", \"deployment\",    \"(.*)\")\n  * 1000",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -1231,7 +1231,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  min_over_time(boshupdate_manifest_release{environment=~\"$environment\"}[30m]) == 0,\n  \"_01_name\", \"$1\", \"name\", \"(.*)\")",
+          "expr": "label_replace(\n  boshupdate_manifest_release{environment=~\"$environment\"} == 0,\n  \"_01_name\", \"$1\", \"name\", \"(.*)\")",
           "format": "table",
           "instant": true,
           "intervalFactor": 1,
@@ -1445,7 +1445,7 @@
       ],
       "targets": [
         {
-          "expr": "label_replace(\n  label_replace(\n    max_over_time(boshupdate_manifest_bosh_release_info{environment=~\"$environment\"}[30m]),\n    \"_01_manifest_name\", \"$1\", \"manifest_name\", \"(.*)\"),\n  \"_02_manifest_version\", \"$1\", \"manifest_version\", \"(.*)\")\n",
+          "expr": "label_replace(\n  label_replace(\n    boshupdate_manifest_bosh_release_info{environment=~\"$environment\"},\n    \"_01_manifest_name\", \"$1\", \"manifest_name\", \"(.*)\"),\n  \"_02_manifest_version\", \"$1\", \"manifest_version\", \"(.*)\")\n",
           "format": "table",
           "instant": true,
           "intervalFactor": 1,
