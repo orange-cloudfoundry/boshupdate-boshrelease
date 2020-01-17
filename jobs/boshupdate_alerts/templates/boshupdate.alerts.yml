@@ -10,15 +10,6 @@ groups:
           summary: "Deprecated deployment `{{$labels.environment}}/{{$labels.deployment}}`"
           description: "Deployment `{{$labels.environment}}/{{$labels.deployment}}` with version `{{$labels.current}}` is out-of-date since `{{$value}}` days. Last available version is `{{$labels.latest}}`"
 
-      - alert: BoshUpdateLastScrapTooOld
-        expr: (time() - boshupdate_last_scrape_timestamp) > 1800
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: "boshupdate_exporter last scrap is too old"
-          description: "Last scrap of boshupdate_exporter is older than 30m"
-
       - alert: BoshUpdateScrapError
         expr: boshupdate_last_scrape_error > 0
         for: 1h
