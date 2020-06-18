@@ -9,5 +9,5 @@ templates:
 properties:
   boshupdate_alerts.deploymentdeprecated.threshold:
     description: "Maximum number of days since deployment is deprecated"
-    default: 77
+    default: 98
 
