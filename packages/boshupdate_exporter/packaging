@@ -1,19 +1,10 @@
-#!/bin/bash -eu
+#!/bin/bash -e
 
 ostype=$(uname  | tr '[:upper:]' '[:lower:]')
-if [ -z "${BOSH_PACKAGES_DIR-}" ]; then
-  pkg_dir=$(readlink -nf /var/vcap/packages/golang-1-${ostype})
-else
-  pkg_dir=${BOSH_PACKAGES_DIR}/golang-1-${ostype}
-fi
+bin_name="boshupdate_exporter"
+tar_name="${bin_name}_${ostype}.tar.gz"
 
-PACKAGE_NAME="github.com/orange-cloudfoundry/boshupdate_exporter"
-
-source ${pkg_dir}/bosh/compile.env
-
-mkdir -p ${GOPATH}/src/${PACKAGE_NAME}
 mkdir -p ${BOSH_INSTALL_TARGET}/bin
-cp -r boshupdate_exporter/* ${GOPATH}/src/${PACKAGE_NAME}
-
-cd ${GOPATH}/src/${PACKAGE_NAME}/exporter
-go build -a -ldflags "-s -w" -gcflags="all=-trimpath=$GOPATH" -o ${BOSH_INSTALL_TARGET}/bin/boshupdate_exporter
+tar zxf ${tar_name} --strip 1 -C ${BOSH_INSTALL_TARGET}
+mv ${BOSH_INSTALL_TARGET}/${bin_name} ${BOSH_INSTALL_TARGET}/bin
+mv ${BOSH_INSTALL_TARGET}/boshupdate_cli ${BOSH_INSTALL_TARGET}/bin

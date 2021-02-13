@@ -1,10 +1,9 @@
 ---
 name: boshupdate_exporter
 
-dependencies:
-  - golang-1-linux
+dependencies: []
 
 files:
-  - boshupdate_exporter/**
+  - boshupdate_exporter_linux.tar.gz
 
 ...
