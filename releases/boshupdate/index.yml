@@ -25,6 +25,8 @@ builds:
     version: 2.1.5
   cf343a10-6b15-4a8d-5d0d-52ba836e76b0:
     version: 2.1.4
+  e129d812-76b9-496e-78ae-3951ee614d9e:
+    version: 2.2.2
   f061b825-3271-43e2-410f-d61223dd4a78:
     version: 2.0.0
   fdc0ae1c-5fe8-42ba-5b00-ffcd19dc4438:
