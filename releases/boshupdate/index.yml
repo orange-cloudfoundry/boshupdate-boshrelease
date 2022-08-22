@@ -5,6 +5,8 @@ builds:
     version: 2.7.3
   07f6fc45-6fd5-4215-7082-8ec24b1cfa89:
     version: 2.4.0
+  08893fda-1aa8-469b-4efc-bae76f790d64:
+    version: 2.11.2
   0aec9d97-b22a-42fd-77ac-0062aa79da7a:
     version: 2.2.1
   119a3f98-cb47-41b2-5b50-157de35bac66:
