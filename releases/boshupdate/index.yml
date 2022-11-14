@@ -21,6 +21,8 @@ builds:
     version: 2.12.1
   1bb589bf-458c-446b-5ee1-2f7d7412d0c1:
     version: 2.4.1
+  1d242364-f4d1-4ebd-6511-ad54b72c6856:
+    version: 2.13.1
   225faf61-1b71-42ae-68b3-530644aae4e5:
     version: 2.8.0
   2e7dba9a-d549-468b-4225-44ece3d86ab9:
