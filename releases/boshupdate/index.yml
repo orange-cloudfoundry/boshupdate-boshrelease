@@ -137,6 +137,8 @@ builds:
     version: 2.6.6
   ee6dcfa3-6364-40d5-580c-3384246648d0:
     version: 2.5.1
+  ee8d23ca-b21d-4387-520c-bb540714caee:
+    version: 2.15.0
   f061b825-3271-43e2-410f-d61223dd4a78:
     version: 2.0.0
   f1d6057d-14b3-4e5e-49b9-0fdee66089a0:
