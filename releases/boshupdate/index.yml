@@ -33,6 +33,8 @@ builds:
     version: 2.15.2
   2e7dba9a-d549-468b-4225-44ece3d86ab9:
     version: 2.1.3
+  350c0e72-b4cc-4d31-7cfa-83523092270f:
+    version: 2.21.4
   363d91f0-85c5-4cd6-6e8f-627ce287920d:
     version: 2.11.6
   39a53e43-55e7-4629-780e-525f437cc915:
