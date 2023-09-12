@@ -63,6 +63,8 @@ builds:
     version: 2.18.0
   3c5dd822-2800-4f59-7e5f-9f3a177e7701:
     version: 2.19.0
+  3f6de8ed-7b33-44ef-57c5-e98e325b5f6c:
+    version: 2.31.2
   40a2bf98-143e-4093-69ec-a030061d2457:
     version: 2.14.1
   4100a0e0-cdf4-4238-5a88-e12a7c93c085:
