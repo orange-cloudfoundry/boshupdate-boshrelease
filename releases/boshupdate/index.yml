@@ -357,6 +357,8 @@ builds:
     version: 2.23.1
   e49faf04-304b-46a3-46b4-d6fc3d4f6f91:
     version: 2.21.3
+  e558e94a-ec43-497b-40de-2b0e75ce4aab:
+    version: 2.49.0
   e573efc5-221b-466b-4e95-e45fa81ac316:
     version: 2.24.1
   e61083d6-0c03-4bd8-403e-d949f74d22f3:
