@@ -307,6 +307,8 @@ builds:
     version: 2.7.0
   bf0373a0-0842-4489-658f-e05b25f04b46:
     version: 2.10.2
+  bf0d711c-eb5f-40e8-6a29-16b5970096d3:
+    version: 2.49.1
   bfb67044-a94f-4706-7a4e-36bd1efb034b:
     version: 2.36.0
   c02403c7-a9aa-4da7-4519-0793cb49af56:
