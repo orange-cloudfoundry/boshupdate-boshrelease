@@ -29,6 +29,8 @@ builds:
     version: 2.35.0
   0d440db9-9206-4e78-6fd6-192b75454a0f:
     version: 2.39.0
+  0e1f1b42-0aa6-4f0c-6310-b85e9a1718e7:
+    version: 2.55.2
   0e670f87-b642-498e-6f5a-f70932f0ce58:
     version: 2.44.0
   1194a770-cd93-491e-63bc-f9b46a05c81e:
