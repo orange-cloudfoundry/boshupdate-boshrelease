@@ -9,6 +9,8 @@ builds:
     version: 2.48.3
   03954ede-29b9-43de-53bf-2898043ca18f:
     version: 2.18.1
+  03aa8fe0-280d-40bb-5137-17a3ccaac128:
+    version: 2.65.2
   04c803ae-852b-47b6-4540-a8e0040bf7a4:
     version: 2.12.3
   060b4bb9-95a3-497c-67af-831400d01876:
