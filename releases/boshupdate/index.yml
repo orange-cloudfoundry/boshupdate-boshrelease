@@ -519,6 +519,8 @@ builds:
     version: 2.34.4
   ee6dcfa3-6364-40d5-580c-3384246648d0:
     version: 2.5.1
+  ee8b751e-5eee-4b19-6cc4-b221ab519ab2:
+    version: 2.72.2
   ee8d23ca-b21d-4387-520c-bb540714caee:
     version: 2.15.0
   f061b825-3271-43e2-410f-d61223dd4a78:
